@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=false;">
+    <title>Portfolio</title>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../imgs/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../imgs/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../imgs/icons/favicon-16x16.png">
+
+    <link rel="stylesheet" href="css/palette.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom-navbar.css">
+</head>
+
+<body onload="load()">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<div class="bg-white">
+
+    <!--  NAVBAR -->
+    <div class="container mb-0 nav-bar-z-index">
+        <nav class="navbar navbar-expand-md mb-0" id="ftco-navbar">
+            <div class="container mb-0">
+                <!--                <div class="navbar-header">-->
+                <!-- LOGO -->
+                <a class="navbar-brand m-0 p-0" href="index.html">
+                    <img class="logo_img" src="imgs/logo_transparent.png" alt="logo"></a>
+                <!-- SOCIAL MEDIAS -->
+                <div class="social-media order-md-last">
+                    <p class="mb-0 d-flex">
+                        <a href="https://www.facebook.com/pracownia.studioprojektowe/"
+                           target="_blank" rel="noopener noreferrer"
+                           class="d-flex align-items-center justify-content-center">
+                            <span class="fa fa-facebook">
+                                <i class="sr-only">Facebook</i>
+                            </span>
+                        </a>
+                        <a href="https://www.instagram.com/autorska_pracownia_projektowa/"
+                           target="_blank" rel="noopener noreferrer"
+                           class="d-flex align-items-center justify-content-center">
+                            <span class="fa fa-instagram">
+                                <i class="sr-only">Instagram</i>
+                            </span>
+                        </a>
+                    </p>
+                </div>
+
+                <!-- HABURGER MENU -->
+                <button class="navbar-toggle mr-0" data-toggle="collapse" data-target=".btnCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+
+                <!-- MENU ITEMS -->
+                <div class="collapse navbar-collapse btnCollapse">
+                    <ul class="navbar-nav ml-auto mr-md-3 nav-fill w-100">
+                        <li class="nav-item border-md-right active"><a href="index.html" class="nav-link">Portfolio</a></li>
+                        <li class="nav-item border-md-right"><a href="proces.html" class="nav-link">Proces</a></li>
+                        <li class="nav-item border-md-right"><a href="pracownia.html" class="nav-link">Pracownia</a></li>
+                        <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- END nav -->
+    </div>
+
+</div>
+
+    <!--  HEADER  -->
+    <div class="bg-olive-lighter pb-3 h-25">
+        <br><br><br><br><br>
+<!--        <div class="container pt-4 mb-3">-->
+<!--            <h1 class="text-handwriting text-center text-accent"> </h1>-->
+<!--            <p class="text-center mb-5"> </p>-->
+<!--        </div>-->
+    </div>
+
+
+    <div id="carousel" class="gtco-testimonials">
+        <!--CAROUSEL-->
+        <div id="carousel-items" class="owl-carousel owl-carousel1 owl-theme"></div>
+    </div>
+
+
+    <div id="album">
+    </div>
+
+
+
+
+
+
+<!--<div class="background-right bg-olive-lighter"></div>-->
+<!-- partial -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
+<!--<script type="text/javascript" src="./script.js"></script>-->
+<script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+<script type="text/javascript">
+    function load() {
+        $.getJSON('projects.json', function (data) {
+            $.each(data.projects, function (i, project) {
+                var carouselItem = "\n" +
+                    "            <div class=\"card text-center\">\n" +
+                    "                <img class=\"card-img-top\"\n" +
+                    "                     src=\"" + project.albumPhoto + "\"\n" +
+                    "                     alt=\"\"/>\n" +
+                    "                <div class=\"card-body\">\n" +
+                    "                    <h5><br>" + project.title + "<br/></h5>\n" +
+                    "                    <div>\n" +
+                    "                        <p> " + project.description + " </p>\n" +
+                    "                        <a class=\"more-btn\" href=\"#\" onclick=\"showAlbum('" + project.id + "')\">Więcej ➔</a>\n" +
+                    "                    </div>\n" +
+                    "                </div>\n" +
+                    "            </div>\n" +
+                    "        ";
+                // console.dir(project)
+                $("#carousel-items").append(carouselItem);
+            });
+            carousels();
+        });
+    }
+
+
+    function carousels() {
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            loop: true,
+            center: true,
+            margin: 0,
+            responsiveClass: true,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                680: {
+                    items: 2,
+                    nav: false
+                },
+                1000: {
+                    items: 3,
+                    nav: true
+                }
+            }
+        });
+        //var timestamp_mousewheel = 0; //Define it not in a function should
+
+        owl.on('mousewheel', '.owl-stage', function (e) {
+            console.log("hi");
+            console.log(e);
+            if (e.originalEvent.deltaY>0) {
+                owl.trigger('next.owl');
+            } else {
+                owl.trigger('prev.owl');
+            }
+            e.preventDefault();
+        });
+
+        // using the event helper
+        owl.mousewheel(function(event) {
+            console.log(event.deltaX, event.deltaY, event.deltaFactor);
+        });
+    }
+</script>
+
+</body>
+</html>

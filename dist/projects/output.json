@@ -1,0 +1,101 @@
+{
+  "projects": [
+    {
+      "path": "projects/1",
+      "id": 0,
+      "title": "Project 1",
+      "photos": [
+        "main.jpg",
+        "photo02.jpg",
+        "photo03.jpg",
+        "photo04.jpg",
+        "photo05.jpg"
+      ]
+    },
+    {
+      "path": "projects/2",
+      "id": 1,
+      "title": "2",
+      "photos": [
+        "main.jpg",
+        "Łazienka00.jpg",
+        "Łazienka02.jpg",
+        "Łazienka03.jpg",
+        "Łazienka04.jpg"
+      ]
+    },
+    {
+      "path": "projects/3",
+      "id": 2,
+      "title": "3",
+      "photos": [
+        "01.jpg",
+        "02.jpg",
+        "03.jpg",
+        "04.jpg",
+        "05.jpg",
+        "07.jpg",
+        "08.jpg",
+        "09.jpg",
+        "10.jpg",
+        "11.jpg",
+        "12.jpg",
+        "13.jpg",
+        "14.jpg",
+        "15.jpg",
+        "16.jpg",
+        "17.jpg",
+        "18.jpg",
+        "19.jpg",
+        "20.jpg",
+        "21.jpg",
+        "22.jpg",
+        "23.jpg",
+        "24.jpg",
+        "25.jpg",
+        "26.jpg",
+        "27.jpg",
+        "28.jpg",
+        "29.jpg",
+        "main.jpg"
+      ]
+    },
+    {
+      "path": "projects/4",
+      "id": 3,
+      "title": "4",
+      "photos": [
+        "Babie lato12.jpg",
+        "Babie lato13.jpg",
+        "Babie lato14.jpg",
+        "Babie lato15.jpg",
+        "Babie lato16.jpg",
+        "Babie lato17.jpg",
+        "Babie lato19.jpg",
+        "Babie lato20.jpg",
+        "BabieLato01.jpg",
+        "BabieLato02.jpg",
+        "BabieLato03.jpg",
+        "BabieLato04.jpg",
+        "BabieLato05.jpg",
+        "BabieLato06.jpg",
+        "BabieLato07.jpg",
+        "BabieLato08.jpg",
+        "BabieLato09.jpg",
+        "main.jpg"
+      ]
+    },
+    {
+      "path": "projects/5",
+      "id": 4,
+      "title": "5",
+      "photos": [
+        "main.jpg",
+        "Sypialnia02.jpg",
+        "Sypialnia03.jpg",
+        "Sypialnia04.jpg",
+        "Sypialnia05.jpg"
+      ]
+    }
+  ]
+}

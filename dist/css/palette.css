@@ -1,0 +1,136 @@
+:root {
+    --col-1: #d7ceca;
+    --col-2: #bfb7b3;
+    --col-3: #a7a09d;
+    --col-4: #8f8986;
+
+    --color-lighter: #f7f1eb;
+    --color: #e7cec7;
+    --color-dark: #be9885;
+    --color-darker: #675249;
+    --color-logo-olive: #cfcab7;
+    --color-logo-olive-lighter: #cfcab7;
+
+    --color-sraczka-1:#9a937a;
+
+    --text-light: #FAF9F7;
+    --text-accent: #be9885;
+    --text-grey: #cfc5c3;
+    --text-main: black;
+
+
+    --color-background-beige: #FAF9F7;
+
+}
+
+html {
+    background-color: var(--color-background-beige) !important;
+    height: 100%;
+}
+
+.background-right{
+    background-attachment: fixed;
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 30%;
+    width: 100%;
+    position:absolute;
+    top:0;
+    right:0;
+    z-index: -2;
+    border-bottom-left-radius: 0;
+}
+
+.logo_img {
+    border: none;
+    width: 160px;
+}
+
+.div-footer {
+    z-index: -10;
+}
+
+.div-back {
+    z-index: -1;
+}
+
+.div-front {
+    z-index: 30;
+}
+
+.text-color-accent-darker {
+    color: var(--color-accent-darker)
+}
+.text-color-accent {
+    color: var(--color-accent)
+}
+.text-color-accent-lighter {
+    color: var(--color-accent-lighter)
+}
+
+.text-color-olive {
+    color: var(--color-logo-olive)
+}
+
+
+.text-accent {
+    color: var(--text-accent)
+}
+.text-grey {
+    color: var(--text-grey)
+}
+.text-black {
+    color: black;
+}
+.text-darker {
+    color: var(--color-darker);
+}
+
+.text-light {
+    color: var(--text-light);
+}
+
+
+/*.active {*/
+/*    color: var(--color-darker);*/
+/*}*/
+
+.text-handwriting {
+    font-family: 'Alex Brush', serif;
+}
+
+.bg-olive {
+    background-color: var(--color-logo-olive);
+}
+
+.bg-light {
+    background-color: var(--text-light)!important;
+}
+
+.bg-olive-lighter {
+    background-color: var(--color-logo-olive-lighter);
+}
+
+.bg-color-darker {
+    background-color: var(--color-darker);
+}
+
+
+.border {
+    border: 2px solid var(--color-logo-olive-lighter) !important;
+}
+
+.backgrund-accent {
+    background-color: var(--text-accent) !important;
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item.active > a {
+    color: var(--text-accent);
+    font-weight: bold;
+}
+
+.process-numbers {
+    font-size: 120px; !important;
+    font-weight: bolder !important;
+    color: var(--color-logo-olive-lighter)
+}

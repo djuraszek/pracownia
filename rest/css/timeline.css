@@ -1,0 +1,120 @@
+:root {
+    --card-radius: 0px;
+    --main-color: #111111;
+    --main-color-darker: #111111;
+    --color-accent: #5E7E7A;
+    --color-accent1: #5E7E7A;
+    --color-accent-darker: #42636A;
+    --main-color-rgb: RGB(208,203,184);
+    --main-color-transp: RGBA(208,203,184,0.5)
+}
+
+
+.ml-step-container{
+    width:100%;
+    padding:30px;
+}
+
+hr.ml-step-hr{
+    border-top: 1px solid #A7A8AA;
+    border-bottom:0px;
+    margin:10px 20px 0px 20px;
+}
+
+.ml-step-header.expanded > hr.ml-step-hr{
+    display:none;
+}
+
+.ml-step-header{
+    height:60px;
+    padding: 20px 15px 20px 15px ;
+    margin:0;
+    /*background:url(/assets/patterns/img/step-border-BG.png) repeat-y 0 0;*/
+    /*border-left:8px solid #D9D9D6;*/
+}
+
+.ml-step-header-elements{
+    display:flex;
+}
+
+.ml-step-header-elements > h3{
+    padding: 0px 5px 0px 5px ;
+    text-align: left;
+    color:#333333;
+    font-weight:normal;
+    font-size:16px;
+    text-decoration:none;
+    margin-top:-2px;
+}
+/* ====== expanded ======*/
+
+.expanded{
+    /*background:url(/assets/patterns/img/step-border-BG-active.png) repeat-y 0 0;*/
+    /*border-left:8px solid var(--color-accent1);*/
+}
+.ml-step-header.expanded > .ml-step-header-elements > h3{
+    color:var(--color-accent1);
+    text-decoration:none !important;
+    font-weight:bold;
+}
+/* ====== completed ======*/
+
+.completed{
+    /*background:url(/assets/patterns/img/step-border-BG-complete.png) repeat-y 0 0 !important;;*/
+    border-left:8px solid #A4CE4E !important;
+}
+.ml-step-header.completed > .ml-step-header-elements > h3{
+    cursor:pointer;
+    color:var(--color-accent1);
+    text-decoration:underline;
+}
+
+
+.ml-step-content-odd {
+    border-left:6px solid var(--color-accent1);
+    padding: 0px 20px 0px 15px;
+}
+
+.ml-step-content-even {
+    border-left:6px solid var(--color-accent1);
+    padding: 0px 20px 0px 15px;
+}
+
+.ml-step-content-div{
+    padding: 5px 20px 5px 20px;
+    margin-left: 200px;
+    color: lightgrey;
+}
+
+
+
+/* ======== Step Style ====== */
+
+.ml-step-numbers {
+
+    margin-left:-27px;
+    margin-right:10px;
+    margin-top:-8px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background: var(--color-accent1);
+    font-size: 18px;
+    font-weight:bold;
+    color: #ffffff;
+    text-align: center;
+    display:inline-block;
+
+}
+p {
+    text-align: justify;
+}
+
+/*-- nieparzyste  */
+p.odd{
+}
+
+/*   parzyste */
+p.even{
+
+}
