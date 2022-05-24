@@ -36,7 +36,6 @@
     <div class="container mb-0 nav-bar-z-index">
         <nav class="navbar navbar-expand-md mb-0" id="ftco-navbar">
             <div class="container mb-0 mt-5">
-                <!--                <div class="navbar-header">-->
                 <!-- LOGO -->
                 <a class="navbar-brand m-0 p-0" href="index.html">
                     <img class="logo_img" src="imgs/logo_transparent.png" alt="logo"></a>
@@ -87,13 +86,9 @@
         <br>
         <div class="w-100 position-relative">
             <h1 id="project-name" class="text-handwriting text-center text-darker cavalier-font"></h1>
-
             <button id="back-button" class="position-absolute text-center border-0" onclick="onBackButtonClick()">
             </button>
-
-
         </div>
-
         <div class="w-50 mx-auto d-block opacity-60" style="height: 1px; background-color: gray"></div>
     </div>
 </div>
@@ -106,17 +101,14 @@
 
 <div class="ml-lg-5 mr-lg-5 pt-5 mb-5">
     <div id="album" class="row mt-lg-5">
-        <!--    <img src="" class="col-lg-4 col-md-6 col-sm-12"/>-->
     </div>
 </div>
 
 
-<!--<div class="background-right bg-olive-lighter"></div>-->
 <!-- partial -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
-<!--<script type="text/javascript" src="./script.js"></script>-->
 <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
 <script type="text/javascript">
     function load() {
@@ -163,7 +155,6 @@
         var jsonArray = getProjectsArray()
         console.log(jsonArray);
         const jsonObject = jsonArray.find(project => project.id === projectID);
-
         // console.log(jsonObject);
 
         //hide carousel
@@ -234,7 +225,6 @@
         //var timestamp_mousewheel = 0; //Define it not in a function should
 
         owl.on('mousewheel', '.owl-stage', function (e) {
-            // console.log("hi");
             // console.log(e);
             if (e.originalEvent.deltaY > 0) {
                 owl.trigger('next.owl');
