@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
     <title>Portfolio</title>
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
@@ -33,11 +37,12 @@
 <div class="">
 
     <!--  NAVBAR -->
-    <div class="container mb-0 nav-bar-z-index">
+    <div class="container mb-0">
         <nav class="navbar navbar-expand-md mb-0" id="ftco-navbar">
             <div class="container mb-0 mt-5">
+                <!--                <div class="navbar-header">-->
                 <!-- LOGO -->
-                <a class="navbar-brand m-0 p-0" href="index.html">
+                <a class="navbar-brand m-0 p-0" href="#">
                     <img class="logo_img" src="imgs/logo_transparent.png" alt="logo"></a>
                 <!-- SOCIAL MEDIAS -->
                 <div class="social-media order-md-last">
@@ -67,9 +72,11 @@
                 <!-- MENU ITEMS -->
                 <div class="collapse navbar-collapse btnCollapse">
                     <ul class="navbar-nav ml-auto mr-md-3 nav-fill w-100">
-                        <li class="nav-item border-md-right active"><a href="index.html" class="nav-link">Portfolio</a></li>
+                        <li class="nav-item border-md-right active"><a href="index.html" class="nav-link">Portfolio</a>
+                        </li>
                         <li class="nav-item border-md-right"><a href="proces.html" class="nav-link">Proces</a></li>
-                        <li class="nav-item border-md-right"><a href="pracownia.html" class="nav-link">Pracownia</a></li>
+                        <li class="nav-item border-md-right"><a href="pracownia.html" class="nav-link">Pracownia</a>
+                        </li>
                         <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a></li>
                     </ul>
                 </div>
@@ -94,7 +101,7 @@
 </div>
 
 
-<div id="carousel" class="center-div mt-auto mb-auto gtco-testimonials carousel-z-index">
+<div id="carousel" class="center-div mt-auto mb-auto gtco-testimonials">
     <!--CAROUSEL-->
     <div id="carousel-items" class="owl-carousel owl-carousel1 owl-theme"></div>
 </div>
@@ -113,7 +120,7 @@
 <script type="text/javascript">
     function load() {
         $("#photo-header").hide();
-        $.getJSON('projects/output2.json', function (data) {
+        $.getJSON('projects.json', function (data) {
             $.each(data.projects, function (i, project) {
                 var jsonObject = project;
                 var albumPhoto = project.path + "/main.jpg"
@@ -130,7 +137,7 @@
                     "                </div>\n" +
                     "            </div>\n" +
                     "        ";
-                // console.dir(project)
+                console.dir(project)
                 $("#carousel-items").append(carouselItem);
 
             });
@@ -141,7 +148,7 @@
     function getProjectsArray() {
         var jsonArray = {};
         $.ajax({
-            url: "projects/output.json",
+            url: "projects.json",
             async: false,
             dataType: 'json',
             success: function (data) {
@@ -185,7 +192,6 @@
                 "class=\"col-lg-6 col-md-6 col-sm-12 mb-5\"/>";
             // console.dir(project)
             $("#album").append(photoItem);
-            // const fs = require('fs');
         });
     }
 
@@ -224,15 +230,16 @@
         });
         //var timestamp_mousewheel = 0; //Define it not in a function should
 
-        owl.on('mousewheel', '.owl-stage', function (e) {
-            // console.log(e);
-            if (e.originalEvent.deltaY > 0) {
-                owl.trigger('next.owl');
-            } else {
-                owl.trigger('prev.owl');
-            }
-            e.preventDefault();
-        });
+        // owl.on('mousewheel', '.owl-stage', function (e) {
+        //     // console.log("hi");
+        //     // console.log(e);
+        //     if (e.originalEvent.deltaY > 0) {
+        //         owl.trigger('next.owl');
+        //     } else {
+        //         owl.trigger('prev.owl');
+        //     }
+        //     e.preventDefault();
+        // });
 
         // using the event helper
         // owl.mousewheel(function(event) {
