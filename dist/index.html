@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../imgs/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../imgs/icons/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../imgs/icons/favicon-16x16.png">
 
     <link rel="stylesheet" href="css/palette.css">
     <link rel="stylesheet" href="css/style.css">
@@ -33,14 +32,13 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="js/includehtml.js"></script>
 
 <div class="">
-
     <!--  NAVBAR -->
     <div class="container mb-0">
         <nav class="navbar navbar-expand-md mb-0" id="ftco-navbar">
             <div class="container mb-0 mt-5">
-                <!--                <div class="navbar-header">-->
                 <!-- LOGO -->
                 <a class="navbar-brand m-0 p-0" href="#">
                     <img class="logo_img" src="imgs/logo_transparent.png" alt="logo"></a>
@@ -70,13 +68,11 @@
                 </button>
 
                 <!-- MENU ITEMS -->
-                <div class="collapse navbar-collapse btnCollapse">
+                <div class="collapse navbar-collapse btnCollapse" style="z-index: 999; background-color: var(--color-background-beige)">
                     <ul class="navbar-nav ml-auto mr-md-3 nav-fill w-100">
-                        <li class="nav-item border-md-right active"><a href="index.html" class="nav-link">Portfolio</a>
-                        </li>
+                        <li class="nav-item border-md-right active"><a href="index.html" class="nav-link">Portfolio</a></li>
                         <li class="nav-item border-md-right"><a href="proces.html" class="nav-link">Proces</a></li>
-                        <li class="nav-item border-md-right"><a href="pracownia.html" class="nav-link">Pracownia</a>
-                        </li>
+                        <li class="nav-item border-md-right"><a href="pracownia.html" class="nav-link">Pracownia</a></li>
                         <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a></li>
                     </ul>
                 </div>
@@ -84,12 +80,11 @@
         </nav>
         <!-- END nav -->
     </div>
-
 </div>
 
 <!--  HEADER  -->
 <div class="pb-1 h-25">
-    <div id="photo-header" class="container position-relative">
+    <div id="photo-header" class="container position-relative" style="display: none">
         <br>
         <div class="w-100 position-relative">
             <h1 id="project-name" class="text-handwriting text-center text-darker cavalier-font"></h1>
@@ -101,16 +96,17 @@
 </div>
 
 
-<div id="carousel" class="center-div mt-auto mb-auto gtco-testimonials">
+<div id="carousel" class="gtco-testimonials mt-5 mb-5">
     <!--CAROUSEL-->
-    <div id="carousel-items" class="owl-carousel owl-carousel1 owl-theme"></div>
+    <div id="carousel-items" class="owl-carousel owl-theme"></div>
 </div>
 
-<div class="ml-lg-5 mr-lg-5 pt-5 mb-5">
-    <div id="album" class="row mt-lg-5">
-    </div>
-</div>
+<!-- ALBUM -->
+<div id="album" class="row mt-lg-5 ml-lg-5 mr-lg-5 pt-5 mb-5" style="display: none"></div>
 
+
+<!-- FOOTER -->
+<div w3-include-html="footer.html"></div>
 
 <!-- partial -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
@@ -118,8 +114,11 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
 <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
 <script type="text/javascript">
+    includeHTML()
+
     function load() {
         $("#photo-header").hide();
+        $("#album").hide();
         $.getJSON('projects.json', function (data) {
             $.each(data.projects, function (i, project) {
                 var jsonObject = project;
@@ -137,7 +136,7 @@
                     "                </div>\n" +
                     "            </div>\n" +
                     "        ";
-                console.dir(project)
+                // console.dir(project)
                 $("#carousel-items").append(carouselItem);
 
             });
@@ -160,7 +159,7 @@
 
     function onProjectClick(projectID) {
         var jsonArray = getProjectsArray()
-        console.log(jsonArray);
+        // console.log(jsonArray);
         const jsonObject = jsonArray.find(project => project.id === projectID);
         // console.log(jsonObject);
 
@@ -170,7 +169,7 @@
         //show back button to go back to carousel
         $("#photo-header").show();
 
-        console.log(jsonObject.path);
+        // console.log(jsonObject.path);
 
         //populate gallery with photos from
         showPhotos(jsonObject);
@@ -179,9 +178,9 @@
 
     function showPhotos(obj) {
         var path = obj.path;
-        console.log("Path: " + path);
+        // console.log("Path: " + path);
         var photos = obj.photos;
-        console.log("Photos: " + photos);
+        // console.log("Photos: " + photos);
 
         document.getElementById("project-name").innerHTML = "" + obj.title;
 
@@ -209,44 +208,47 @@
             center: true,
             margin: 0,
             responsiveClass: true,
-            touchDrag: false,
-            pullDrag: false,
+            touchDrag: true,
+            pullDrag: true,
             smartSpeed: 1500,
             nav: true,
+            navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
             responsive: {
                 0: {
                     items: 1,
                     nav: false
                 },
-                680: {
+                780: {
                     items: 2,
                     nav: false
                 },
-                1000: {
+                1400: {
                     items: 3,
                     nav: true
                 }
             }
         });
-        //var timestamp_mousewheel = 0; //Define it not in a function should
+        var timestamp_mousewheel = 0;
+        owl.on("mousewheel", ".owl-stage", function(a) {
+            var d = new Date();
+            if((d.getTime() - timestamp_mousewheel) > 1000){ //minimum time difference
+                timestamp_mousewheel = d.getTime();
+                // console.log(timestamp_mousewheel);
+                // console.log(a.originalEvent);
 
-        // owl.on('mousewheel', '.owl-stage', function (e) {
-        //     // console.log("hi");
-        //     // console.log(e);
-        //     if (e.originalEvent.deltaY > 0) {
-        //         owl.trigger('next.owl');
-        //     } else {
-        //         owl.trigger('prev.owl');
-        //     }
-        //     e.preventDefault();
-        // });
+                if (a.originalEvent.deltaX < 0) {
+                    owl.trigger('next.owl');
+                } else if (a.originalEvent.deltaX > 0) {
+                    owl.trigger('prev.owl');
+                }
 
-        // using the event helper
-        // owl.mousewheel(function(event) {
-        //     console.log(event.deltaX, event.deltaY, event.deltaFactor);
-        // });
+                a.preventDefault();
+                timestamp_mousewheel = d.getTime();
+            }
+        });
     }
 </script>
+
 
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=false;">
+    <meta name="viewport" content="width=device-width, user-scalable=false">
     <title>Portfolio</title>
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
@@ -155,23 +155,42 @@
                 }
             }
         });
-        //var timestamp_mousewheel = 0; //Define it not in a function should
+        var timestamp_mousewheel = 0;
 
-        owl.on('mousewheel', '.owl-stage', function (e) {
-            console.log("hi");
-            console.log(e);
-            if (e.originalEvent.deltaY>0) {
-                owl.trigger('next.owl');
-            } else {
-                owl.trigger('prev.owl');
+        owl.on("mousewheel", ".owl-stage", function(a) {
+            var d = new Date();
+            if((d.getTime() - timestamp_mousewheel) > 800){ //minimum time difference
+
+                console.log(timestamp_mousewheel);
+                console.log(a.originalEvent);
+
+                if (a.originalEvent.deltaX < 0) {
+                    owl.trigger('next.owl');
+                } else if(a.originalEvent.deltaY < 0) {
+                    owl.trigger('next.owl');
+                } else {
+                    owl.trigger('prev.owl');
+                }
+                a.preventDefault();
+                timestamp_mousewheel = d.getTime();
             }
-            e.preventDefault();
         });
 
-        // using the event helper
-        owl.mousewheel(function(event) {
-            console.log(event.deltaX, event.deltaY, event.deltaFactor);
-        });
+        // owl.on('mousewheel', '.owl-stage', function (e) {
+        //     console.log("hi");
+        //     console.log(e);
+        //     if (e.originalEvent.deltaY>0) {
+        //         owl.trigger('next.owl');
+        //     } else {
+        //         owl.trigger('prev.owl');
+        //     }
+        //     e.preventDefault();
+        // });
+        //
+        // // using the event helper
+        // owl.mousewheel(function(event) {
+        //     console.log(event.deltaX, event.deltaY, event.deltaFactor);
+        // });
     }
 </script>
 

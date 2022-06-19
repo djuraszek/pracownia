@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/custom-navbar.css">
 </head>
 <body>
+<script src="js/includehtml.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
@@ -124,7 +125,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 mt-auto mb-auto hidden-sm">
+            <div class="col-lg-4 mt-auto mb-auto hidden-xs hidden-sm ">
                 <div class="circle text-center">
                     <h1 class="process-numbers center"> 01 </h1>
                 </div>
@@ -162,7 +163,7 @@
         <!-- STEP 3 -->
         <!-- WIZUALIZACJE -->
         <div class="row">
-            <div class="col-sm-12 mt-auto mb-auto hidden-md hidden-lg">
+            <div class="col-sm-12 mt-auto mb-auto hidden-md">
                 <div class="circle text-center">
                     <h1 class="process-numbers center"> 03 </h1>
                 </div>
@@ -186,7 +187,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 mt-auto mb-auto hidden-sm hidden-md">
+            <div class="col-lg-4 mt-auto mb-auto hidden-xs hidden-sm ">
                 <div class="circle text-center">
                     <h1 class="process-numbers center"> 03 </h1>
                 </div>
@@ -250,7 +251,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 mt-auto mb-auto hidden-sm hidden-md">
+            <div class="col-lg-4 mt-auto mb-auto hidden-xs hidden-sm  ">
                 <div class="circle text-center">
                     <h1 class="process-numbers center"> 05 </h1>
                 </div>
@@ -286,5 +287,14 @@
     </div>
 
 </div>
+
+
+<!-- FOOTER -->
+<div w3-include-html="footer.html"></div>
+
+<script type="text/javascript">
+    includeHTML()
+</script>
+
 </body>
 </html>

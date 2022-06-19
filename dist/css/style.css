@@ -52,7 +52,7 @@ a:hover, a:focus {
 
 .gtco-testimonials {
     position: relative;
-    top: -100px;
+    //top: -100px;
     margin-top: 0;
 }
 
@@ -64,11 +64,11 @@ a:hover, a:focus {
 }
 
 .gtco-testimonials .owl-stage-outer {
-    padding: 20px 0;
+    padding-bottom: 20px;
 }
 
 .gtco-testimonials .owl-nav {
-    display: none;
+    /*display: none;*/
 }
 
 .gtco-testimonials .owl-dots {
@@ -206,20 +206,64 @@ a:hover, a:focus {
     height: 500px;
 }
 
-
 /*.gtco-testimonials .card  {*/
 /*  height: 400px;*/
 /*}*/
 
-@media (max-width: 767px) {
-    .gtco-testimonials {
-        margin-top: 20px;
+@media (min-height: 400px) {
+    .owl-carousel .owl-item, .gtco-testimonials .card {
+        height: 450px;
     }
-
+}
+@media (min-height: 668px) {
+    .owl-carousel .owl-item, .gtco-testimonials .card {
+        height: 500px;
+    }
+}
+@media (min-height: 767px) {
+    .owl-carousel .owl-item, .gtco-testimonials .card {
+        height: 580px;
+    }
+}
+@media (min-height: 915px) {
+    .owl-carousel .owl-item, .gtco-testimonials .card {
+        height: 700px;
+    }
+}
+@media (min-height: 1025px) {
+    .owl-carousel .owl-item, .gtco-testimonials .card {
+        height: 800px;
+    }
+}
+@media (min-height: 1225px) {
+    .owl-carousel .owl-item, .gtco-testimonials .card {
+        height: 900px;
+    }
 }
 
-.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev {
-    outline: 0;
+.owl-carousel .prev-slide{
+    background: url(../imgs/arrow_left_24.png) no-repeat;
+    background-size: contain;
+}
+.owl-carousel .next-slide {
+    background: url(../imgs/arrow_right_24.png) no-repeat;
+    background-size: contain;
+}
+
+.owl-carousel .prev-slide, .owl-carousel .next-slide{
+    padding: 10px!important;
+    margin: 0 20px;
+    border: none !important;
+    height: 30px;
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+.owl-nav {
+    text-align: center!important;
+    height: 30px;
 }
 
 .owl-carousel button.owl-dot {
@@ -283,7 +327,7 @@ a:hover, a:focus {
 
 .center-div {
     position: fixed;
-    top: 25%;
+    top: 20%;
     width: 100%;
 }
 
@@ -296,15 +340,13 @@ a:hover, a:focus {
     align-items: center;
     top: 30%;
     left: 15%;
-    /*border: 0px solid var(--text-grey);*/
-    width: 70px;
+    width: 50px;
     height: 20px;
     opacity: 0.6;
-    background-image: URL(../imgs/arrow_2.png);
+    background-image: URL(../imgs/arrow.png);
+    background-color: transparent!important;
     background-repeat: no-repeat;
     background-size: auto 100%;
-    /*border-radius: 50%;*/
-    /*color: var(--text-grey);*/
 }
 
 #back-button:focus {
@@ -328,4 +370,21 @@ a:hover, a:focus {
 }
 .carousel-z-index {
     z-index: -99;
+}
+
+footer {
+    /*position: fixed;*/
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-logo-olive-lighter);
+    color: white;
+    text-align: center;
+    opacity: 50%;
+}
+
+.footer-links {
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
 }
